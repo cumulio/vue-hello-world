@@ -1,6 +1,6 @@
 <template>
   <div>
-    <cumulio-dashboard dashboardId="DASHBOARD_ID_HERE" :authKey="key" :authToken="token"></cumulio-dashboard>
+    <cumulio-dashboard appServer="APP_SERVER_HERE" apiHost="API_HOST_HERE" dashboardId="DASHBOARD_ID_HERE" :authKey="key" :authToken="token"></cumulio-dashboard>
   </div>
 </template>
 
