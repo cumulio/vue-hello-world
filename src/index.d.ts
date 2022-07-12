@@ -1,0 +1,1 @@
+declare module '@cumul.io/vue-cumulio-dashboard';

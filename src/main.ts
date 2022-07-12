@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import VueCumulio from '@cumul.io/vue-cumulio-dashboard';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(VueCumulio);
+
+app.mount('#app')

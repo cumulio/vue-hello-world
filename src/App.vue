@@ -1,17 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>
+    <cumulio-dashboard dashboardId="DASHBOARD_ID_HERE" :authKey="key" :authToken="token"></cumulio-dashboard>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      key: null,
+      token: null
+    };
+  },
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData: async function() {
+      const auth = await fetch('http://localhost:4001').then(response => response.json()).catch(err => console.log(err));
+      this.key = auth.key;
+      this.token = auth.token;
+    }
   }
+
 });
 </script>
 
